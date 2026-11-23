@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Niel Mathew Basa - Third Year BSIT Student, aspiring IT professional and developer.">
+
+    <title>Niel Mathew Basa | IT Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #09090f;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 9%;
+            background: rgba(9, 9, 15, .93);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #252535;
+        }
+
+        .logo {
+            color: #a78bfa;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul a {
+            color: #aaaabc;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        nav ul a:hover {
+            color: #a78bfa;
+        }
+
+        section {
+            padding: 100px 9%;
+            scroll-margin-top: 75px;
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #211b37;
+            border: 1px solid #493878;
+            color: #c4b5fd;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .gradient {
+            background: linear-gradient(90deg, #a78bfa, #60a5fa);
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content p {
+            color: #a1a1b2;
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+
+        .hero-photo {
+            flex-shrink: 0;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(135deg, #a78bfa, #60a5fa);
+            box-shadow: 0 0 60px #8b5cf633;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #09090f;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            background: #8b5cf6;
+            color: white;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 5px 8px 5px 0;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #555568;
+        }
+
+        .btn-outline:hover {
+            background: #211b37;
+        }
+
+        .section-title {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-desc {
+            color: #9999aa;
+            margin-bottom: 35px;
+            font-size: 14px;
+        }
+
+        .about-box,
+        .project-card,
+        .skill-card,
+        .info-card {
+            background: #13131d;
+            border: 1px solid #252535;
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .about-box p {
+            color: #aaaabd;
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .info-card h3 {
+            color: #a78bfa;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            color: #aaaabd;
+            font-size: 13px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card {
+            transition: .3s;
+        }
+
+        .skill-card:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            color: #c4b5fd;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #9999aa;
+            font-size: 13px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            transition: .3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #8b5cf6;
+        }
+
+        .project-number {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project-card h3 {
+            color: #c4b5fd;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #aaaabd;
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+
+        .project-card span {
+            color: #60a5fa;
+            font-size: 11px;
+        }
+
+        .education {
+            border-left: 2px solid #8b5cf6;
+            padding: 5px 0 5px 25px;
+        }
+
+        .education h3 {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .education p {
+            color: #aaaabd;
+            font-size: 14px;
+        }
+
+        .goal-box {
+            background: linear-gradient(120deg, #1b1730, #111827);
+            border: 1px solid #403268;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .goal-box p {
+            color: #b6b6c8;
+        }
+
+        .contact-box {
+            text-align: center;
+            background: #151321;
+            border: 1px solid #30274a;
+            border-radius: 18px;
+            padding: 50px 20px;
+        }
+
+        .contact-box p {
+            color: #aaaabd;
+            margin: 15px 0 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #252535;
+            color: #77778a;
+            font-size: 12px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media(max-width: 800px) {
+            nav {
+                padding: 17px 5%;
+            }
+
+            nav ul {
+                gap: 13px;
+            }
+
+            nav ul a {
+                font-size: 11px;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .hero-photo {
+                width: 210px;
+                height: 210px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 65px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 39px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">NIEL.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <span class="tag">3RD YEAR BSIT STUDENT</span>
+
+                <h1>
+                    Hi, I'm <span class="gradient">Niel Mathew Basa.</span>
+                </h1>
+
+                <p>
+                    An aspiring IT professional and developer from
+                    Filamer Christian University. Passionate about
+                    programming, web development, and computer vision.
+                    Always eager to learn, explore, and build new things
+                    through technology.
+                </p>
+
+                <a href="#projects" class="btn">Explore My Projects</a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Get In Touch
+                </a>
+
+            </div>
+
+            <div class="hero-photo">
+                <img src="profile.jpg"
+                     alt="Niel Mathew Basa"
+                     onerror="this.style.display='none'">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about" class="reveal">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p class="section-desc">
+            A little introduction about myself.
+        </p>
+
+        <div class="about-box">
+
+            <p>
+                Hello! I'm Niel Mathew Basa, a third-year Bachelor
+                of Science in Information Technology student at
+                Filamer Christian University.
+            </p>
+
+            <p>
+                I am interested in Python programming, web development,
+                database management, computer troubleshooting, and
+                computer vision. I enjoy developing academic projects
+                that allow me to apply what I have learned in class.
+            </p>
+
+            <p>
+                I am continuously improving my technical knowledge,
+                problem-solving abilities, and programming skills
+                as I prepare for future opportunities in the IT industry.
+            </p>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Education</h3>
+                    <p>BS Information Technology</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>University</h3>
+                    <p>Filamer Christian University</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Year Level</h3>
+                    <p>Third Year College</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Expected Graduation</h3>
+                    <p>2028</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="reveal">
+
+        <h2 class="section-title">Technical Skills</h2>
+
+        <p class="section-desc">
+            Technologies and skills I have been learning and practicing.
+        </p>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Programming and application development.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Creating website structures and layouts.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Website styling and responsive designs.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Database Management</h3>
+                <p>Organizing and managing application data.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>OpenCV</h3>
+                <p>Image processing and computer vision.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>MediaPipe</h3>
+                <p>Hand tracking and face landmark detection.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>Analyzing problems and finding solutions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="reveal">
+
+        <h2 class="section-title">Academic Projects</h2>
+
+        <p class="section-desc">
+            Some of the projects I have worked on as an IT student.
+        </p>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <div class="project-number">PROJECT 01</div>
+
+                <h3>Hand Tracking System</h3>
+
+                <p>
+                    A Python-based application that detects and tracks
+                    hand movements using a webcam. It uses computer vision
+                    to recognize hand landmarks and finger movements.
+                </p>
+
+                <span>Python · OpenCV · MediaPipe</span>
+
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-number">PROJECT 02</div>
+
+                <h3>QR Code Attendance Monitoring System</h3>
+
+                <p>
+                    An academic system concept that uses QR codes
+                    to help record and monitor student attendance
+                    digitally.
+                </p>
+
+                <span>QR Code · Attendance Management</span>
+
+            </div>
+
+            <div class="project-card">
+
+                <div class="project-number">PROJECT 03</div>
+
+                <h3>Web-Based Information System</h3>
+
+                <p>
+                    A web application developed to organize information
+                    and provide users with an accessible way to manage
+                    and view records.
+                </p>
+
+                <span>HTML · CSS · Python · Database</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education" class="reveal">
+
+        <h2 class="section-title">Education</h2>
+
+        <p class="section-desc">
+            My academic background.
+        </p>
+
+        <div class="education">
+
+            <h3>Bachelor of Science in Information Technology</h3>
+
+            <p>Filamer Christian University</p>
+
+            <p>Third Year College Student</p>
+
+            <p>Expected Graduation: 2028</p>
+
+        </div>
+
+    </section>
+
+    <!-- CAREER GOAL -->
+
+    <section id="goal" class="reveal">
+
+        <h2 class="section-title">Career Goal</h2>
+
+        <p class="section-desc">
+            What I am working towards.
+        </p>
+
+        <div class="goal-box">
+
+            <p>
+                My goal is to become a skilled IT professional and gain
+                real-world experience in the technology industry.
+                I am looking forward to an IT Internship or On-the-Job
+                Training (OJT) opportunity where I can apply my knowledge,
+                develop my skills, learn from experienced professionals,
+                and contribute to a team.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- INTERESTS -->
+
+    <section id="interests" class="reveal">
+
+        <h2 class="section-title">Personal Interests</h2>
+
+        <p class="section-desc">
+            Things that motivate me to keep learning.
+        </p>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>Writing code and building applications.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>New Technologies</h3>
+                <p>Exploring modern tools and technologies.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Software Development</h3>
+                <p>Learning how to develop useful software.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Continuous Learning</h3>
+                <p>Improving my technical and problem-solving skills.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="reveal">
+
+        <div class="contact-box">
+
+            <h2 class="section-title">Let's Connect!</h2>
+
+            <p>
+                I am open to connecting with IT professionals,
+                fellow developers, and potential internship opportunities.
+                Feel free to reach out!
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:basa.nielmathewolivera@filamer.edu.ph"
+                   class="btn">
+                    Email Me
+                </a>
+
+                <a href="https://github.com/Mathiue911"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-outline">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/niel-mathew-olivera-basa-b70002449/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-outline">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+            © <span id="year"></span> Niel Mathew Basa.
+            All Rights Reserved.
+        </p>
+
+        <p>Designed and developed with passion.</p>
+
+    </footer>
+
+    <script>
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll(".reveal").forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
+
+</body>
+</html>
